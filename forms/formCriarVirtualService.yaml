@@ -1,0 +1,58 @@
+name: Criar Virtual Service no ALB
+roles:
+  - public
+description: Teste...
+categories:
+  - Demo
+  - Ansible
+type: awx
+template: "Teste AWX"
+inventory: ""
+fields:
+  - type: enum
+    name: ambiente
+    label: Ambiente
+    required: true
+    values:
+      - stage
+      - production
+      - internet
+      - infra
+  - type: text
+    name: app_name
+    label: "Nome da aplicação (sem o prefixo: vsp, vss ou vsi)"
+    default: ""
+    required: true
+    regex:
+      expression: ^([a-z0-9]+[-\_]*)*[a-z0-9]+$
+      description: Somente letras minúsculase e números, podendo ser separados pelos
+        caracteres (-_). Não incluir o ambiente.
+    minLength: 3
+    maxLength: 50
+  - type: text
+    name: pool_server_hostname
+    label: Hostname do Server do Pool
+    default: ""
+    required: true
+    regex:
+      expression: ^([a-z0-9]+[-\_\.]*)*[a-z0-9]+$
+      description: Somente letras minúsculase e números, podendo ser separados pelos
+        caracteres (.-_).
+    minLength: 3
+    maxLength: 50
+  - type: text
+    name: pool_server_ip_addr
+    label: Endereço IP do Server do Pool
+    default: ""
+    required: true
+    regex:
+      expression: (\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}
+      description: IP inválido
+  - type: number
+    name: pool_default_server_port
+    label: Porta padrão do Pool
+    default: ""
+    required: true
+    minValue: 1
+    maxValue: 65535
+source: formCriarVirtualService.yaml
