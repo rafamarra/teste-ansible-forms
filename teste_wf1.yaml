@@ -3,8 +3,8 @@
   gather_facts: yes
 
   vars:
-    - in1
-    - in2
+    in1: "1"
+    in2: "2"
 
   tasks:
     - name: Set some data to pass down to the 2nd AWS Job template
