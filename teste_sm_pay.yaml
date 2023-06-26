@@ -7,6 +7,12 @@
     smax_credentials_file: "roles/smax/vars/credentials.yml"
 
   tasks:
+    - name: Load
+      include_vars: "{{ item }}"
+      no_log: true
+      loop: 
+        - "{{ smax_credentials_file }}"
+
     - name: Teste
       debug:
         msg: "{{ smax_credentials }}"
