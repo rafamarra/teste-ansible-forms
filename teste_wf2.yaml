@@ -3,6 +3,10 @@
   gather_facts: yes
 
   tasks:
-    - name: Debug my_personal_variable
+    - name: Debug
       debug:
-        var: my_personal_variable
+        var: in1
+
+    - name: Debug
+      debug:
+        var: in2
