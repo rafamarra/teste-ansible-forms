@@ -1,0 +1,12 @@
+---
+- name: Teste
+  hosts: localhost
+  gather_facts: no
+
+  vars:
+    smax_credentials_file: "roles/smax/vars/credentials.yml"
+
+  tasks:
+    - name: Teste
+      debug:
+        msg: "{{ smax_credentials }}"
