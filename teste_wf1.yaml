@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: Set some data to pass down to the 2nd AWS Job template
+      set_stats:
+        data:
+          my_personal_variable: "blah"
