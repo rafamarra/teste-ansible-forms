@@ -2,16 +2,12 @@
 - hosts: localhost
   gather_facts: yes
 
-  vars_prompt:
-    - name: username
-      prompt: What is your username?
-      private: false
-    - name: password
-      prompt: What is your password?
-
   vars:
     in1: "1"
     in2: "2"
+
+  debug:
+    msg: "Params: {{ in1 }} - {{ in2 }}"
 
   tasks:
     - name: Set some data to pass down to the 2nd AWS Job template
