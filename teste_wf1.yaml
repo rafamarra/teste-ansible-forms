@@ -2,6 +2,13 @@
 - hosts: localhost
   gather_facts: yes
 
+  vars_prompt:
+    - name: username
+      prompt: What is your username?
+      private: false
+    - name: password
+      prompt: What is your password?
+
   vars:
     in1: "1"
     in2: "2"
