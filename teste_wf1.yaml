@@ -6,10 +6,10 @@
     in1: "1"
     in2: "2"
 
-  debug:
-    msg: "Params: {{ in1 }} - {{ in2 }}"
-
   tasks:
+    - debug:
+        msg: "Params: {{ in1 }} - {{ in2 }}"
+
     - name: Set some data to pass down to the 2nd AWS Job template
       set_stats:
         data:
