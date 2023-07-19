@@ -8,7 +8,6 @@
      
     - name: Carrega variaveis
       include_vars: "{{ item }}"
-      no_log: true
       loop: 
         - "{{ vars_file }}"
 
