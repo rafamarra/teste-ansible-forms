@@ -1,0 +1,18 @@
+---
+
+- name: Teste env
+  hosts: localhost
+  gather_facts: no
+    
+  pre_tasks:
+     
+    - name: Carrega variaveis
+      include_vars: "{{ item }}"
+      no_log: true
+      loop: 
+        - "{{ vars_file }}"
+
+  tasks:
+    - name: Debug
+    - debug:
+        msg: "{{ ocp_credentials }}"
