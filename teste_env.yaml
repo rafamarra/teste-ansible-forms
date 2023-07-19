@@ -14,5 +14,5 @@
 
   tasks:
     - name: Debug
-    - debug:
+      debug:
         msg: "{{ ocp_credentials }}"
