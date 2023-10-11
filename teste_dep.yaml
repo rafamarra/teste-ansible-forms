@@ -9,6 +9,8 @@
           - netaddr
       delegate_to: 127.0.0.1
 
+    - shell: pip list output
+
     - debug:
         msg: "{{ '10.4.244.0/24' | ansible.utils.ipaddr('size_usable') }}"
       delegate_to: 127.0.0.1
