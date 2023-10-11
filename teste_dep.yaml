@@ -3,10 +3,7 @@
   gather_facts: yes
 
   tasks:
-    - name: Install python deps
-      ansible.builtin.pip:
-        name:
-          - netaddr
+    - ansible.builtin.shell: pip install netaddr
 
     - shell: pip list output
       register: outm
