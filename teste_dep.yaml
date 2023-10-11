@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  gather_facts: yes
+
+  tasks:
+    - name: Install python deps
+      ansible.builtin.pip:
+        name:
+          - netaddr
+      delegate_to: 127.0.0.1
+
+    - debug:
+        msg: "{{ '10.4.244.0/24' | ansible.utils.ipaddr('size_usable') }}"
