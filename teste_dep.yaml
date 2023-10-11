@@ -4,6 +4,7 @@
 
   tasks:
     - ansible.builtin.shell: pip install netaddr
+      delegate_to: localhost
 
     - shell: pip list output
       register: outm
