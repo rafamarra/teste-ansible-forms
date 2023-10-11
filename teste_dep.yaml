@@ -7,10 +7,12 @@
       ansible.builtin.pip:
         name:
           - netaddr
-      delegate_to: 127.0.0.1
 
     - shell: pip list output
+      register: outm
+
+    - debug:
+        msg: "{{ outm }}"
 
     - debug:
         msg: "{{ '10.4.244.0/24' | ansible.utils.ipaddr('size_usable') }}"
-      delegate_to: 127.0.0.1
